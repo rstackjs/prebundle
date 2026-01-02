@@ -3,7 +3,7 @@
   "version": "1.6.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rspack-contrib/prebundle"
+    "url": "https://github.com/rstackjs/prebundle"
   },
   "type": "module",
   "main": "./dist/index.js",
