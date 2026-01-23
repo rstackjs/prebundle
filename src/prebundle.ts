@@ -213,7 +213,7 @@ function emitPackageJson(
     } catch {}
   }
 
-  fs.writeJSONSync(outputPath, pickedPackageJson);
+  fs.outputFileSync(outputPath, JSON.stringify(pickedPackageJson, null, 2));
 }
 
 function emitLicense(task: ParsedTask) {
