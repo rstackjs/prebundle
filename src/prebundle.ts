@@ -268,22 +268,24 @@ export async function prebundle(
   const hasNodeModules = existsSync(nodeModulesPath);
   const enableCache = !process.env.CI && hasNodeModules;
 
-  const { code, assets } = await ncc(task.depEntry, {
-    minify: task.minify,
-    target: task.target,
-    externals: mergedExternals,
-    assetBuilds: false,
-    cache: enableCache ? join(nodeModulesPath, '.cache', 'ncc-cache') : false,
-  });
+  if (task.dtsOnly) {
+    emitPackageJson(task, {});
+  } else {
+    const { code, assets } = await ncc(task.depEntry, {
+      minify: task.minify,
+      target: task.target,
+      externals: mergedExternals,
+      assetBuilds: false,
+      cache: enableCache ? join(nodeModulesPath, '.cache', 'ncc-cache') : false,
+    });
 
-  if (!task.dtsOnly) {
     await emitIndex(code, task.distPath, task.prettier && !task.minify);
     emitAssets(assets, task.distPath);
+    emitPackageJson(task, assets);
   }
 
   await emitDts(task, mergedExternals);
   emitLicense(task);
-  emitPackageJson(task, assets);
   removeSourceMap(task);
   renameDistFolder(task);
   emitExtraFiles(task);
