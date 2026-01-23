@@ -188,7 +188,14 @@ function emitPackageJson(
     pickedPackageJson.name = task.depName;
   }
 
-  pickedPackageJson.types = task.copyDts ? getTypes(packageJson) : 'index.d.ts';
+  if (task.copyDts) {
+    const types = getTypes(packageJson);
+    if (types) {
+      pickedPackageJson.types = types;
+    }
+  } else {
+    pickedPackageJson.types = 'index.d.ts';
+  }
 
   if (task.dtsOnly) {
     pickedPackageJson.type = packageJson.type || 'commonjs';
