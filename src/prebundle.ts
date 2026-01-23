@@ -190,7 +190,11 @@ function emitPackageJson(
 
   pickedPackageJson.types = task.copyDts ? getTypes(packageJson) : 'index.d.ts';
 
-  pickedPackageJson.type = 'commonjs';
+  if (task.dtsOnly) {
+    pickedPackageJson.type = packageJson.type || 'commonjs';
+  } else {
+    pickedPackageJson.type = 'commonjs';
+  }
 
   if (assets['package.json']) {
     try {
