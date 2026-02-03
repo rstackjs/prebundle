@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, expect, it } from '@rstest/core';
+import { afterAll, beforeAll, describe, expect, it, rs } from '@rstest/core';
 import { execFile } from 'node:child_process';
 import { promises as fs, readdirSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
@@ -19,11 +19,13 @@ const targetPackages: TargetPackage[] = [
   {
     name: 'chalk',
     verify: async (distPath: string) => {
+      rs.stubEnv('FORCE_COLOR', '1');
       const mod = await loadBundledModule(distPath);
       const chalkInstance = mod.default ?? mod;
       const message = chalkInstance.hex('#00ff88')('prebundle-ready');
       expect(message).toContain('prebundle-ready');
       expect(message).toContain('\u001b[');
+      rs.unstubAllEnvs();
     },
   },
   {
