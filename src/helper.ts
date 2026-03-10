@@ -59,18 +59,19 @@ export function parseTasks(
 
   for (const dep of dependencies) {
     const depName = typeof dep === 'string' ? dep : dep.name;
+    const dtsOnly = typeof dep === 'string' ? false : (dep.dtsOnly ?? false);
     const importPath = join(cwd, DIST_DIR, depName);
     const distPath = join(cwd, DIST_DIR, depName);
-    const depPath = findDepPath(depName);
+    const depPath = dtsOnly ? null : findDepPath(depName);
 
-    if (!depPath) {
+    if (!depPath && !dtsOnly) {
       throw new Error(`Failed to resolve dependency: ${depName}`);
     }
 
-    const depEntry = require.resolve(depName, { paths: [cwd] });
+    const depEntry = dtsOnly ? '' : require.resolve(depName, { paths: [cwd] });
     const info = {
       depName,
-      depPath,
+      depPath: depPath ?? '',
       depEntry,
       distPath,
       importPath,
