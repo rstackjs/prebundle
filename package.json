@@ -24,7 +24,7 @@
     "test": "rstest"
   },
   "dependencies": {
-    "cac": "^6.7.14",
+    "cac": "^7.0.0",
     "@vercel/ncc": "0.38.4",
     "prettier": "^3.8.1",
     "rollup": "^4.60.0",
