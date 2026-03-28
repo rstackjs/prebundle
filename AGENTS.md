@@ -8,7 +8,7 @@
 
 ## Build, Test, and Development Commands
 - `pnpm install` respects `pnpm-lock.yaml`; mixing package managers is forbidden to avoid dependency drift.
-- `pnpm dev` runs `rslib build --watch` for tight feedback while hacking on `src/`.
+- `pnpm dev` runs `rslib -w` for tight feedback while hacking on `src/`.
 - `pnpm build` generates production artifacts and doubles as a pre-publish smoke test; run it before every PR or release.
 - `pnpm test` triggers `pnpm build && rstest`, which runs the CLI integration suite.
 - `pnpm prebundle [pkg1 pkg2 ...] --config path/to/config` executes the CLI for all configured dependencies or a filtered subset; use `--config` to point at custom fixtures.

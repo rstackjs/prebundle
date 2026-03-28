@@ -16,8 +16,8 @@
     "compiled"
   ],
   "scripts": {
-    "build": "rslib build",
-    "dev": "rslib build --watch",
+    "build": "rslib",
+    "dev": "rslib -w",
     "prebundle": "node ./bin.js",
     "prepare": "npm run build",
     "bump": "npx bumpp",

@@ -1,7 +1,7 @@
 import { defineConfig } from '@rslib/core';
 
 export default defineConfig({
-  lib: [{ format: 'esm', syntax: 'es2021', dts: { bundle: false } }],
+  lib: [{ syntax: 'es2021', dts: { bundle: false } }],
   tools: {
     rspack: {
       externals: [/[\\/]compiled[\\/]/],
