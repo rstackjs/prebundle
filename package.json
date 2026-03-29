@@ -19,7 +19,7 @@
     "build": "rslib",
     "dev": "rslib -w",
     "prebundle": "node ./bin.js",
-    "prepare": "npm run build",
+    "prepare": "rslib",
     "bump": "npx bumpp",
     "test": "rstest"
   },
@@ -41,7 +41,7 @@
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.4",
     "rslog": "^2.1.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "packageManager": "pnpm@10.33.0",
   "publishConfig": {

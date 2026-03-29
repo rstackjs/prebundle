@@ -20,7 +20,9 @@ const targetPackages: TargetPackage[] = [
     name: 'chalk',
     verify: async (distPath: string) => {
       const mod = await loadBundledModule(distPath);
-      const chalkInstance = mod.default ?? mod;
+      const chalkInstance = mod.Chalk
+        ? new mod.Chalk({ level: 1 })
+        : (mod.default ?? mod);
       const message = chalkInstance.hex('#00ff88')('prebundle-ready');
       expect(message).toContain('prebundle-ready');
       expect(message).toContain('\u001b[');
@@ -94,7 +96,7 @@ function readRelativeFileTree(distPath: string) {
 
 async function loadBundledModule(distPath: string) {
   const moduleUrl = pathToFileURL(join(distPath, 'index.js'));
-  return import(moduleUrl.href);
+  return import(`${moduleUrl.href}?t=${Date.now()}`);
 }
 
 async function runPrebundle() {
