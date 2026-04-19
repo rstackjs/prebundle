@@ -26,22 +26,22 @@
   "dependencies": {
     "cac": "^7.0.0",
     "@vercel/ncc": "0.38.4",
-    "prettier": "^3.8.2",
-    "rollup": "^4.60.1",
+    "prettier": "^3.8.3",
+    "rollup": "^4.60.2",
     "rollup-plugin-dts": "^6.4.1",
     "terser": "^5.46.1"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.2",
-    "@rslib/core": "0.21.0",
-    "@rstest/core": "^0.9.7",
+    "@rslib/core": "0.21.2",
+    "@rstest/core": "^0.9.8",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "24.12.2",
     "chalk": "^5.6.2",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.4",
     "rslog": "^2.1.1",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@10.33.0",
   "publishConfig": {
