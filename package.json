@@ -18,6 +18,8 @@
   "scripts": {
     "build": "rslib",
     "dev": "rslib -w",
+    "lint": "rslint",
+    "lint:write": "rslint --fix",
     "prebundle": "node ./bin.js",
     "prepare": "rslib",
     "bump": "npx bumpp",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "@rslib/core": "0.21.3",
+    "@rslint/core": "^0.5.2",
     "@rstest/core": "^0.9.10",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "24.12.2",

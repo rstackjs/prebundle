@@ -53,13 +53,30 @@ async function emitIndex(code: string, distPath: string, prettier?: boolean) {
   }
 }
 
-const getTypes = (json: Record<string, string>): string | null =>
+type PackageJsonLike = {
+  types?: unknown;
+  typing?: unknown;
+  typings?: unknown;
+  exports?: {
+    '.'?: PackageJsonLike;
+  };
+};
+
+const getPackageJsonField = (
+  json: PackageJsonLike,
+  key: 'types' | 'typing' | 'typings',
+) => {
+  const value = json[key];
+  return typeof value === 'string' ? value : null;
+};
+
+const getTypes = (json: PackageJsonLike | null | undefined): string | null =>
   (json &&
-    (json.types ||
-      json.typing ||
-      json.typings ||
+    (getPackageJsonField(json, 'types') ||
+      getPackageJsonField(json, 'typing') ||
+      getPackageJsonField(json, 'typings') ||
       // for those who use `exports` only
-      getTypes((json as any).exports?.['.']))) ||
+      getTypes(json.exports?.['.']))) ||
   null;
 
 async function emitDts(task: ParsedTask, externals: Record<string, string>) {
@@ -145,7 +162,7 @@ async function emitDts(task: ParsedTask, externals: Record<string, string>) {
             // Avoid extra work
             checkJs: false,
             // Ensure we can parse the latest code
-            // @ts-expect-error
+            // @ts-expect-error rollup-plugin-dts accepts task target values.
             target: task.target,
           },
         }),
@@ -210,7 +227,9 @@ function emitPackageJson(
         // will be `{"type":"module"}` if the output is of esm format
         pick(JSON.parse(assets['package.json'].source), ['type']),
       );
-    } catch {}
+    } catch {
+      // Keep the picked package fields when ncc emits non-JSON metadata.
+    }
   }
 
   fs.outputFileSync(outputPath, JSON.stringify(pickedPackageJson, null, 2));
