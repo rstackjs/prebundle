@@ -20,7 +20,7 @@ export function findDepPath(name: string) {
     }
 
     return entry;
-  } catch (err) {
+  } catch {
     return null;
   }
 }
@@ -156,7 +156,9 @@ export function findDirectTypeFile(filepath: string) {
     for (const f of list) {
       try {
         return require.resolve(f, { paths: [cwd] });
-      } catch {}
+      } catch {
+        continue;
+      }
     }
   };
   switch (ext) {
