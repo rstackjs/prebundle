@@ -24,8 +24,8 @@ importers:
         specifier: ^6.4.1
         version: 6.4.1(rollup@4.60.4)(typescript@6.0.3)
       terser:
-        specifier: ^5.47.1
-        version: 5.47.1
+        specifier: ^5.48.0
+        version: 5.48.0
     devDependencies:
       '@astrojs/sitemap':
         specifier: ^3.7.2
@@ -37,8 +37,8 @@ importers:
         specifier: ^0.5.3
         version: 0.5.3
       '@rstest/core':
-        specifier: ^0.10.0
-        version: 0.10.0
+        specifier: ^0.10.2
+        version: 0.10.2
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
@@ -455,8 +455,8 @@ packages:
       '@swc/helpers':
         optional: true
 
-  '@rstest/core@0.10.0':
-    resolution: {integrity: sha512-TfmMZ/fvGuGCJbOfVE+Fj8mNxs0opSvEaQZm4lkXMZ/Rdvx4d0yIzHSKZ31bOIAUZIiltMXHoTwu8+pwyBHZyg==}
+  '@rstest/core@0.10.2':
+    resolution: {integrity: sha512-2nadZIrCBJL8AicSLcU0O0G2wo98QXmlsy3yX4ShiLFDlfQAzPgZJYzR6ssqQhVCMx/dIIFifyNiYsGWWWsrXg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -676,8 +676,8 @@ packages:
   stream-replace-string@2.0.0:
     resolution: {integrity: sha512-TlnjJ1C0QrmxRNrON00JvaFFlNh5TTG00APw23j74ET7gkQpTASi6/L2fuiav8pzK715HXtUeClpBTw2NPSn6w==}
 
-  terser@5.47.1:
-    resolution: {integrity: sha512-tPbLXTI6ohPASb/1YViL428oEHu6/qv1OxqYnfaonVCFHqx4+wCd95pHrQWsL5X4pl90CTyW9piSAsS2L0VoMw==}
+  terser@5.48.0:
+    resolution: {integrity: sha512-J/9An6vs9Us6wKRriSFXBWdRZapREHqFzdNUKk0pmu804EMR6dr6winwo7e5JDxN4xahxQsuysyYFwlwj4XN/Q==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -1002,7 +1002,7 @@ snapshots:
     optionalDependencies:
       '@swc/helpers': 0.5.21
 
-  '@rstest/core@0.10.0':
+  '@rstest/core@0.10.2':
     dependencies:
       '@rsbuild/core': 2.0.6
       '@types/chai': 5.2.3
@@ -1220,7 +1220,7 @@ snapshots:
 
   stream-replace-string@2.0.0: {}
 
-  terser@5.47.1:
+  terser@5.48.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
       acorn: 8.15.0
