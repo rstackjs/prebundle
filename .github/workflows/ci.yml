@@ -37,5 +37,8 @@ jobs:
       - name: Run lint
         run: pnpm lint
 
+      - name: Build Packages
+        run: pnpm build
+
       - name: Run tests
         run: pnpm test
