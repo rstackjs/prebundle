@@ -136,7 +136,7 @@ export function replaceFileContent(
 export function pkgNameToAtTypes(name: string) {
   const mangled = name.replace(
     //  111111    222222
-    /^@([^\/]+)\/([^\/]+)/,
+    /^@([^/]+)\/([^/]+)/,
     '$1__$2',
   );
   return `@types/${mangled}`;
