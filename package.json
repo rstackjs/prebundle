@@ -25,8 +25,8 @@
     "test": "rstest"
   },
   "dependencies": {
-    "cac": "^7.0.0",
     "@vercel/ncc": "0.38.4",
+    "cac": "^7.0.0",
     "prettier": "^3.8.3",
     "rollup": "^4.60.4",
     "rollup-plugin-dts": "^6.4.1",
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@rslib/core": "0.22.0",
-    "@rslint/core": "^0.5.3",
+    "@rslint/core": "^0.6.1",
     "@rstest/core": "^0.10.3",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "24.12.4",
