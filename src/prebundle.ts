@@ -11,7 +11,6 @@ import {
   pkgNameToAtTypes,
 } from './helper.js';
 import type { ParsedTask } from './types.js';
-import { dts } from 'rollup-plugin-dts';
 import { rollup, type InputOptions, type OutputOptions } from 'rollup';
 import { minify } from 'terser';
 import { format } from 'prettier';
@@ -133,6 +132,7 @@ async function emitDts(task: ParsedTask, externals: Record<string, string>) {
   }
 
   try {
+    const { dts } = await import('rollup-plugin-dts');
     const inputConfig: InputOptions = {
       input,
       external: [
@@ -162,7 +162,6 @@ async function emitDts(task: ParsedTask, externals: Record<string, string>) {
             // Avoid extra work
             checkJs: false,
             // Ensure we can parse the latest code
-            // @ts-expect-error rollup-plugin-dts accepts task target values.
             target: task.target,
           },
         }),
@@ -181,6 +180,7 @@ async function emitDts(task: ParsedTask, externals: Record<string, string>) {
   } catch (error) {
     logger.error(`rollup-plugin-dts failed: ${task.depName}`);
     logger.error(error);
+    outputDefaultDts();
   }
 }
 
