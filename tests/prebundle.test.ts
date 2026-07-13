@@ -1,6 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from '@rstest/core';
+import { prepareDist } from '@rstackjs/test-utils';
 import { execFile } from 'node:child_process';
-import { promises as fs, readdirSync } from 'node:fs';
+import { readdirSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { promisify } from 'node:util';
@@ -46,14 +47,14 @@ beforeAll(async () => {
   for (const target of targetPackages) {
     const distPath = join(process.cwd(), 'compiled', target.name);
     bundledPaths.set(target.name, distPath);
-    await resetDist(distPath);
+    await prepareDist(distPath);
   }
   await runPrebundle();
 });
 
 afterAll(async () => {
   for (const distPath of bundledPaths.values()) {
-    await resetDist(distPath);
+    await prepareDist(distPath);
   }
 });
 
@@ -66,13 +67,6 @@ describe('prebundle integration smoke tests', () => {
     await assertBundledPackage('@astrojs/sitemap');
   });
 });
-
-async function resetDist(distPath?: string) {
-  if (!distPath) {
-    return;
-  }
-  await fs.rm(distPath, { recursive: true, force: true });
-}
 
 function readRelativeFileTree(distPath: string) {
   const results: string[] = [];
