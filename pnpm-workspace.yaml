@@ -1,4 +1,4 @@
 allowBuilds:
   core-js: false
 minimumReleaseAgeExclude:
-  - '@rstackjs/test-utils@0.2.0'
+  - '@rstackjs/*'
