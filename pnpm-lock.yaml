@@ -36,6 +36,9 @@ importers:
       '@rslint/core':
         specifier: ^0.6.4
         version: 0.6.4
+      '@rstackjs/test-utils':
+        specifier: ^0.2.0
+        version: 0.2.0
       '@rstest/core':
         specifier: ^0.10.6
         version: 0.10.6
@@ -573,6 +576,9 @@ packages:
         optional: true
       '@swc/helpers':
         optional: true
+
+  '@rstackjs/test-utils@0.2.0':
+    resolution: {integrity: sha512-P+LOo1WE3xYeGkHmEthyq2cIpN69k4LhiB/4UBSceD+nW9hDlhWv8MC0LTLWokZXccWl4ntcfOBjQFllkcBlPA==}
 
   '@rstest/core@0.10.6':
     resolution: {integrity: sha512-nX61dw2Tnxfwy/jGZEuNbh2tzapgaH6Iwj4Aw5d2wxUwxptUL3ddUxFF5M1ZSWoLEVG30VaPg3ITzrSo5sdbTg==}
@@ -1205,6 +1211,8 @@ snapshots:
       '@rspack/binding': 2.1.2
     optionalDependencies:
       '@swc/helpers': 0.5.23
+
+  '@rstackjs/test-utils@0.2.0': {}
 
   '@rstest/core@0.10.6':
     dependencies:
