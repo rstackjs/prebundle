@@ -40,7 +40,7 @@
     "@rstest/core": "^0.11.1",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "24.13.3",
-    "chalk": "^5.6.2",
+    "chalk": "^6.0.0",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.6",
     "rslog": "^2.2.0",
