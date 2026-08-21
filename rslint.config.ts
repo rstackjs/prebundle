@@ -7,12 +7,8 @@ export default defineConfig([
   js.configs.recommended,
   ts.configs.recommended,
   {
-    files: ['bin.js'],
-    languageOptions: {
-      globals: {
-        console: 'readonly',
-        process: 'readonly',
-      },
+    rules: {
+      'no-undef': 'off',
     },
   },
 ]);
