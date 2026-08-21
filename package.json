@@ -25,28 +25,28 @@
     "test": "rstest"
   },
   "dependencies": {
-    "@vercel/ncc": "0.44.1",
+    "@vercel/ncc": "0.45.0",
     "cac": "^7.0.0",
-    "prettier": "^3.9.5",
-    "rollup": "^4.62.2",
-    "rollup-plugin-dts": "^6.4.1",
-    "terser": "^5.49.0"
+    "prettier": "^3.9.6",
+    "rollup": "^4.62.4",
+    "rollup-plugin-dts": "^6.5.1",
+    "terser": "^5.50.0"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@rslib/core": "0.23.2",
     "@rslint/core": "^0.8.1",
     "@rstackjs/test-utils": "^0.2.0",
-    "@rstest/core": "^0.11.1",
+    "@rstest/core": "^0.11.9",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "24.13.3",
     "chalk": "^6.0.0",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.6",
-    "rslog": "^2.2.0",
+    "fs-extra": "^11.4.0",
+    "rslog": "^2.3.0",
     "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@11.13.0",
+  "packageManager": "pnpm@11.22.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",
