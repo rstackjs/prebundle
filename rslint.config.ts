@@ -6,4 +6,9 @@ export default defineConfig([
   },
   js.configs.recommended,
   ts.configs.recommended,
+  {
+    rules: {
+      'no-undef': 'off',
+    },
+  },
 ]);
