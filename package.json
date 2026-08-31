@@ -28,16 +28,16 @@
     "@vercel/ncc": "0.45.0",
     "cac": "^7.0.0",
     "prettier": "^3.9.6",
-    "rollup": "^4.62.4",
+    "rollup": "^4.63.1",
     "rollup-plugin-dts": "^6.5.1",
-    "terser": "^5.50.0"
+    "terser": "^5.51.2"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@rslib/core": "0.23.2",
-    "@rslint/core": "^0.8.1",
+    "@rslint/core": "^0.9.0",
     "@rstackjs/test-utils": "^0.2.0",
-    "@rstest/core": "^0.11.9",
+    "@rstest/core": "^0.11.11",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "24.13.3",
     "chalk": "^6.0.0",
@@ -46,7 +46,7 @@
     "rslog": "^2.3.0",
     "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@11.22.0",
+  "packageManager": "pnpm@11.24.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",
