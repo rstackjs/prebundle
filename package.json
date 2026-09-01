@@ -44,7 +44,7 @@
     "fs-extra": "^11.4.0",
     "rslog": "^2.3.0",
     "rstack": "^0.7.1",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "packageManager": "pnpm@11.24.0",
   "publishConfig": {
