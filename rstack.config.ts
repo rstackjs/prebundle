@@ -29,9 +29,4 @@ define.lint(({ js, ts }) => [
   },
   js.configs.recommended,
   ts.configs.recommended,
-  {
-    rules: {
-      'no-undef': 'off',
-    },
-  },
 ]);
