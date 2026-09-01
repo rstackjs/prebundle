@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, expect, it } from '@rstest/core';
+import { afterAll, beforeAll, describe, expect, it } from 'rstack/test';
 import { prepareDist } from '@rstackjs/test-utils';
 import { execFile } from 'node:child_process';
 import { readdirSync } from 'node:fs';
