@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "rs lib",
-    "bump": "npx bumpp",
+    "bump": "pnpm version -m \"release: v%s\"",
     "check": "rs check",
     "dev": "rs lib -w",
     "format": "rs fmt",
