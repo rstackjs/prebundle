@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "@vercel/ncc": "0.45.0",
-    "cac": "^7.0.0",
-    "prettier": "^3.9.6",
-    "rollup": "^4.63.2",
+    "cac": "^7.1.0",
+    "prettier": "^3.9.10",
+    "rollup": "^4.64.6",
     "rollup-plugin-dts": "^6.5.1",
     "terser": "^5.51.2"
   },
@@ -38,15 +38,15 @@
     "@astrojs/sitemap": "^3.7.4",
     "@rstackjs/test-utils": "^1.0.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "24.13.4",
-    "chalk": "^6.0.0",
+    "@types/node": "24.19.2",
+    "chalk": "^6.0.1",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.4.0",
+    "fs-extra": "^11.4.1",
     "rslog": "^2.3.0",
-    "rstack": "^0.7.4",
+    "rstack": "^0.8.3",
     "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@11.27.0",
+  "packageManager": "pnpm@11.28.5",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",
